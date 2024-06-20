@@ -1,0 +1,87 @@
+header {
+
+    width: 1100px;
+    height: 80px;
+    /*   display: inline;
+    justify-content: center; */
+}
+
+.tablinks1 {
+
+    background-color: #382162;
+    color: white;
+
+}
+
+
+
+body {
+
+    display: table;
+    /* justify-content: center; */
+    background-color: #100A1B;
+}
+
+.insideForm {
+
+    background-color: rgb(255, 250, 250);
+    height: 480px;
+    width: 1170px;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 15px;
+    background-image: url('homePic.png');
+    display: table;
+
+
+}
+
+.homePage {
+    margin-top: 10px;
+    font-size: xx-large;
+    color: azure;
+    padding-top: 10px;
+    padding-left: 55px;
+}
+
+#txt1 {
+    font-size: x-large;
+    color: azure;
+    padding-left: 450px;
+}
+
+
+
+
+.animated-text {
+
+    font-size: medium;
+    color: azure;
+    padding-left: 600px;
+    font-family: Open Sans, sans-serif; 
+
+    
+}
+
+
+#txt2 {
+    padding-top: 10px;
+    text-align: center;
+    color: azure;
+    font-size: xxx-large;
+}
+
+#txt3 {
+
+    text-align: center;
+    color: azure;
+    font-size: xxx-large;
+    margin-bottom: 20px;
+}
+
+
+#buttonUpload {
+    position: absolute;
+    top: 420px;
+    left: 100px;
+}

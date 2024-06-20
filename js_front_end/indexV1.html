@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="myCssFile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <header>
+        <h1 class="homePage" style="display: inline;  position: absolute; top: 30px;">
+            Z-DOCUs
+        </h1>
+
+        <button class="tablinks1" onclick="functionIdRecognition()" style="position: absolute; background-color: #38216236;
+    font-family: monospace; width: 250px; height: 40px ; cursor: pointer; font-size: 20px;
+        top: 470px; left: 530px; border-radius: 15px; font-family: Playfair Display, serif;">Z-DOCUs</button>
+
+
+    </header>
+
+
+    <section class="insideForm">
+        <p style="position: absolute; color: aliceblue; left: 280px; width: 700px;
+ top: 350px; text-align: justify; font-size: 14px;
+ font-family: Open Sans, sans-serif;">Welcome to Z-DOCUs, where advanced
+            document recognition and image processing meet simplicity and efficiency.
+            Our cutting-edge technology transforms your documents and
+            images into actionable data with remarkable accuracy and speed. Whether you need automated data extraction,
+            image enhancement, or real-time processing, we provide tailored solutions to streamline
+            your workflow and boost productivity. Discover the future of document management with us.</p>
+
+
+
+        <h1 id="toRecog" style=" display: none;position: absolute; left: 70px;
+             top: 110px; font-family: Open Sans, sans-serif; font-weight: 700;">To recognize your document: </h1>
+
+
+        <input id="fileIcon" type="image" src="fileUpload.png" onclick="testButton(event)"
+            style=" display: none; position: absolute; left: 155px; top: 190px; width: 60px; ">
+
+        <input id="fileUploadText" type="button" value="Upload your document image" onclick="testButton(event)" style=" display: none; cursor: pointer;position: absolute; left: 210px; top: 205px; width: 200px; border-width: 0px; height: 30px;
+                font-family: Open Sans, sans-serif; font-weight: 600; background-color: white;">
+
+        <p id="or"
+            style=" display: none; position: absolute; left: 270px; top: 215px ; font-size: x-large; font-family: Open Sans, sans-serif;font-weight: 300;">
+            -or-</p>
+
+        <input type="file" onchange="changeUploadIdFront(event)" id="sourceImage" name="image" value="upload your file"
+            style="display: none; position: absolute;
+            left: 155px; top: 270px;width: 250px; border-radius: 10px;border-width: 1px; height: 30px;
+                 position: absolute; font-family: Open Sans, sans-serif; font-weight: 600; 
+                 background-color: hsla(180, 5%, 91%, 0.916);">
+
+        <input type="image" src="webcam.png" id="this" value="Upload image here " title="Upload image here "
+            onclick="webcameFunction(event)"
+            style=" display: none; position: absolute;  left: 155px; top: 270px; width: 60px; ">
+        <label id="pleaseWaitLabel" style="position: absolute; display: none; font-family: Open Sans, sans-serif;
+         width: 200px; height: 100px; left: 600px; top: 365px;">Please wait!</label>
+        <img src="icons8-spinner.gif" alt="" id="pleaseWaitImage"
+            style="position: absolute; display: none; width: 50px; height: 50px; left: 540px; top: 350px; ">
+
+        <input id="webText" type="button" value="Turn on real time Recognition" onclick="webcameFunction(event)" style="  display: none; cursor: pointer;position: absolute; left: 210px; top: 280px; width: 200px; border-width: 0px; height: 30px;
+                 font-family: Open Sans, sans-serif; font-weight: 600; background-color: white;">
+
+
+        <img id="imageIdCardFront" width="300px" height="190px"
+            style=" display: none; position: absolute; top: 140px; left: 460px; border-radius: 10px;">
+
+        <input type="button" id="extractB" value="ImageFile Recognition" onclick="extractFunction()" style="  display: none; width: 250px; border-radius: 10px;border-width: 1px; height: 30px;
+                 position: absolute;  cursor: pointer; font-family: Open Sans, sans-serif; font-weight: 600; background-color: hsla(180, 5%, 91%, 0.916); 
+                  left: 480px; top: 350px; ">
+
+
+        <img src="" alt="" id="imgResult" width="430px" height="240px" style="  display: none; position:absolute; left: 775px; border-radius: 10px; 
+            top: 120px;">
+        <p id="extractedText"
+            style=" display: none; position: absolute; left: 460px; margin: 0px; top: 355px; font-family: Open Sans, sans-serif; ">
+            Extracted Text:</p>
+        <textarea id="showResIF" style=" display: none; position:absolute; font-family: Open Sans, sans-serif;
+        top: 380px; left: 460px;width: 750px; border-radius: 10px;
+            height: 130px; font-size: large; color: rgb(4, 32, 69);">
+       </textarea>
+        <p id="whatText"
+            style=" display: none; position: absolute; left: 460px; margin: 0px; top: 520px; font-family: Open Sans, sans-serif; ">
+            What Document is:</p>
+        <textarea id="showResP" style=" display: none; position:absolute; height: 20px; left: 610px; top: 520px; width: 600px;
+             font-family: Open Sans, sans-serif; border-radius: 5px; color:rgb(236, 7, 7);">
+          </textarea>
+        <input type="button" style=" display: none; width: 250px; border-radius: 10px;border-width: 1px; height: 30px;
+            position: absolute;  cursor: pointer; font-family: Open Sans, sans-serif; font-weight: 600;
+             background-color: hsla(180, 5%, 91%, 0.916); 
+             left: 160px; top: 480px; " value="Save extracted data" id="saveDB" onclick="saveDocContent(event)">
+
+        <label id="resultDB" style="display: none; color: rgb(72, 112, 12);
+         position: absolute; font-family: Open Sans, sans-serif; left: 190px; top: 450px;">Data!</label>
+
+        <input type="button" style=" display: none; width: 250px; border-radius: 10px;border-width: 1px; height: 30px;
+                         position: absolute;  cursor: pointer; font-family: Open Sans, sans-serif; font-weight: 600; background-color: hsla(180, 5%, 91%, 0.916); 
+                          left: 480px; top: 390px; " value="Reset" id="reset" onclick="reset(event)">
+
+        <video id="video" width="750px" height="450px" style="display: none; position: absolute; border-radius: 10px;
+            top: 100px; left: 350px;"> </video>
+        <button id="capture" onclick="takephotoFunction()" style=" display: none; width: 180px; border-radius: 10px;border-width: 1px; height: 30px;
+                position: absolute;  cursor: pointer; font-family: Open Sans, sans-serif; 
+                font-weight: 600; background-color: hsla(180, 5%, 91%, 0.916); 
+                left: 1033px; top: 470px;">Capture Image</button>
+        <canvas id="canvas" width="640" height="480" style="display: none;"></canvas>
+
+
+
+
+
+
+
+        <div id="txt2" style="position: absolute; left: 300px; top:110px;
+        font-family: monospace;">Transform Your Documents
+
+        </div>
+        <div id="txt3" style="position: absolute; left: 520px; top:170px;  font-family: monospace;"> into Actionable
+            Data
+        </div>
+
+        <div class="animated-text" style="position: absolute; top: 60px; left: 200px;"></div>
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+        <script>
+            var options = {
+                strings: ["\"Unlock insights from your images\"", "\"With our advanced image data extraction AI technology.\""],
+                typeSpeed: 90,
+                backSpeed: 20,
+                loop: true
+            };
+
+            var typed = new Typed(".animated-text ", options);
+        </script>
+
+
+
+
+    </section>
+
+    <script src="myJsFile.js"></script>
+
+</body>
+
+</html>
