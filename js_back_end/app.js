@@ -11,7 +11,7 @@ app.use(express.urlencoded())
 app.use(bodyParser.json());
 app.listen(3000);
 
-const url="mongodb+srv://zana:test4321@cluster0.dy5noxr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const url="mongodb+srv://@cluster0.dy5noxr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 mongoose.connect(url)
 .then(()=> console.log('Conncected'))
